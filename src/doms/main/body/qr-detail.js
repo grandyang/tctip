@@ -39,7 +39,7 @@ class QRBox extends BaseDom {
   }
 
   genChildren () {
-    this._qrTitle = new QRTitle({}, this)
+    this._qrTitle = new QRTitle(this.config, this)
     this._qrCode = new QRCode(this.config, this)
     this._qrDesc = new QRDesc({
       desc: this.config.desc || ''
@@ -72,7 +72,7 @@ class QRTitle extends BaseDom {
   genDom () {
     this.createDom({
       className: 'tctip-qr-title',
-      [textKey]: '扫描二维码打赏'
+      [textKey]: this.config.title
     }, 'p')
   }
 }
@@ -97,6 +97,11 @@ class QRCode extends BaseDom {
       }, 'img')
     } else if (this.config.qrContent) {
       this.dom.innerHTML = qrcode(this.config.qrContent)
+    } else if (this.config.qrText) {
+      this.appendDom({
+        className: 'tctip-qr-text',
+        [textKey]: this.config.qrText
+      }, 'h4')
     } else {
       console.error('没有可展示的二维码')
     }

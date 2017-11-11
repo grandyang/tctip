@@ -4,7 +4,7 @@
 <title>tctip demo页面></title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<script type="text/javascript" src="../dist/tctip-1.0.2.js"></script>
+<script type="text/javascript" src="../dist/tctip-1.0.3.js"></script>
 <script>
   new tctip({
     top: '20%',
@@ -14,14 +14,11 @@
     },
     list: [
       {
-        type: 'alipay',
-        qrImg: './images/alipay.jpg'
+        type: 'announcement',
+        qrText: '博主最近比较忙，回答留言不是很及时敬请谅解...'
       }, {
         type: 'wechat',
         qrImg: './images/wechat.jpg'
-      }, {
-        type: 'bitcoin',
-        qrContent: '1PhQySHF1ZuoRwoZ8G4CDLEtE6fAnD3GJP'
       }
     ]
   }).init()

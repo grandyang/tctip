@@ -25,9 +25,9 @@ class Link extends BaseDom {
 
   genDom () {
     this.createDom({
-      href: 'https://github.com/greedying/tctip',
+      href: 'http://www.cnblogs.com/grandyang/p/7618471.html',
       target: '_blank',
-      [textKey]: '了解更多'
+      [textKey]: '查看赏金列表'
     }, 'a')
   }
 }

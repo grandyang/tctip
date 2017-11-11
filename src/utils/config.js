@@ -45,6 +45,7 @@ const defaultList = {
   wechat: {
     icon: require('../assets/img/icon/wechat.png'),
     name: '微信',
+    title: '扫描二维码打赏',
     desc: '微信打赏'
   },
   bitcoin: {
@@ -56,6 +57,12 @@ const defaultList = {
     icon: require('../assets/img/icon/tenpay.png'),
     name: '财付通',
     desc: '财付通打赏'
+  },
+  announcement: {
+    icon: require('../assets/img/icon/speaker.png'),
+    name: '公告',
+    title: '最新公告',
+    desc: ''
   }
 }
 
@@ -103,8 +110,8 @@ function formatList (config) {
       console.error('缺少type，相应配置文件为', one)
       break
     }
-    if (!one.qrImg && !one.qrContent) {
-      console.error('缺少qrImg或者qrContent参数，相应配置文件为', one)
+    if (!one.qrImg && !one.qrContent && !one.qrText) {
+      console.error('缺少qrImg或者qrContent参数或者qrText参数，相应配置文件为', one)
       break
     }
 
